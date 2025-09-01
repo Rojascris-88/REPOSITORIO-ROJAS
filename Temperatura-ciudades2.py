@@ -1,0 +1,102 @@
+# Crear matriz 3D de temperaturas (ciudad -> semana -> día)
+temperaturas = [
+    [   # Ciudad A
+        [ {"day": "Lunes", "temp": 25},
+          {"day": "Martes", "temp": 27},
+          {"day": "Miércoles", "temp": 26},
+          {"day": "Jueves", "temp": 28},
+          {"day": "Viernes", "temp": 30},
+          {"day": "Sábado", "temp": 31},
+          {"day": "Domingo", "temp": 29} ],
+        [ {"day": "Lunes", "temp": 24},
+          {"day": "Martes", "temp": 26},
+          {"day": "Miércoles", "temp": 27},
+          {"day": "Jueves", "temp": 29},
+          {"day": "Viernes", "temp": 30},
+          {"day": "Sábado", "temp": 32},
+          {"day": "Domingo", "temp": 28} ],
+        [ {"day": "Lunes", "temp": 26},
+          {"day": "Martes", "temp": 28},
+          {"day": "Miércoles", "temp": 27},
+          {"day": "Jueves", "temp": 29},
+          {"day": "Viernes", "temp": 31},
+          {"day": "Sábado", "temp": 33},
+          {"day": "Domingo", "temp": 30} ],
+        [ {"day": "Lunes", "temp": 25},
+          {"day": "Martes", "temp": 27},
+          {"day": "Miércoles", "temp": 28},
+          {"day": "Jueves", "temp": 30},
+          {"day": "Viernes", "temp": 32},
+          {"day": "Sábado", "temp": 31},
+          {"day": "Domingo", "temp": 29} ]
+    ],
+    [   # Ciudad B
+        [ {"day": "Lunes", "temp": 18},
+          {"day": "Martes", "temp": 20},
+          {"day": "Miércoles", "temp": 19},
+          {"day": "Jueves", "temp": 21},
+          {"day": "Viernes", "temp": 22},
+          {"day": "Sábado", "temp": 23},
+          {"day": "Domingo", "temp": 21} ],
+        [ {"day": "Lunes", "temp": 19},
+          {"day": "Martes", "temp": 21},
+          {"day": "Miércoles", "temp": 20},
+          {"day": "Jueves", "temp": 22},
+          {"day": "Viernes", "temp": 23},
+          {"day": "Sábado", "temp": 24},
+          {"day": "Domingo", "temp": 22} ],
+        [ {"day": "Lunes", "temp": 18},
+          {"day": "Martes", "temp": 20},
+          {"day": "Miércoles", "temp": 21},
+          {"day": "Jueves", "temp": 22},
+          {"day": "Viernes", "temp": 23},
+          {"day": "Sábado", "temp": 25},
+          {"day": "Domingo", "temp": 23} ],
+        [ {"day": "Lunes", "temp": 19},
+          {"day": "Martes", "temp": 21},
+          {"day": "Miércoles", "temp": 20},
+          {"day": "Jueves", "temp": 23},
+          {"day": "Viernes", "temp": 22},
+          {"day": "Sábado", "temp": 24},
+          {"day": "Domingo", "temp": 21} ]
+    ],
+    [   # Ciudad C
+        [ {"day": "Lunes", "temp": 32},
+          {"day": "Martes", "temp": 33},
+          {"day": "Miércoles", "temp": 31},
+          {"day": "Jueves", "temp": 34},
+          {"day": "Viernes", "temp": 35},
+          {"day": "Sábado", "temp": 36},
+          {"day": "Domingo", "temp": 34} ],
+        [ {"day": "Lunes", "temp": 31},
+          {"day": "Martes", "temp": 32},
+          {"day": "Miércoles", "temp": 33},
+          {"day": "Jueves", "temp": 34},
+          {"day": "Viernes", "temp": 35},
+          {"day": "Sábado", "temp": 37},
+          {"day": "Domingo", "temp": 35} ],
+        [ {"day": "Lunes", "temp": 33},
+          {"day": "Martes", "temp": 34},
+          {"day": "Miércoles", "temp": 35},
+          {"day": "Jueves", "temp": 36},
+          {"day": "Viernes", "temp": 37},
+          {"day": "Sábado", "temp": 38},
+          {"day": "Domingo", "temp": 36} ],
+        [ {"day": "Lunes", "temp": 32},
+          {"day": "Martes", "temp": 33},
+          {"day": "Miércoles", "temp": 34},
+          {"day": "Jueves", "temp": 35},
+          {"day": "Viernes", "temp": 36},
+          {"day": "Sábado", "temp": 37},
+          {"day": "Domingo", "temp": 35} ]
+    ]
+]
+
+# Nombres de ciudades
+nombres_ciudades = ["Ciudad A", "Ciudad B", "Ciudad C"]
+
+# Calcular y mostrar promedio por ciudad y semana
+for idx_ciudad, ciudad in enumerate(temperaturas):
+    for idx_semana, semana in enumerate(ciudad):
+        promedio = sum(dia["temp"] for dia in semana) / len(semana)
+        print(f"Promedio de temperaturas en {nombres_ciudades[idx_ciudad]}, Semana {idx_semana+1}: {promedio:.2f}°C")
